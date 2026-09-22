@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>★~[ OVO Sound Archive :: Drake Cyber FanStation ]~★</title>
+  <style>
+    /* === OVO NOIR & GOLD Y2K CORE STYLES === */
+    :root {
+      --bg-color: #070709;
+      --text-color: #d1d5db;
+      --accent-gold: #ffd700;
+      --accent-cyan: #00f0ff;
+      --accent-purple: #8a2be2;
+      --panel-bg: rgba(14, 14, 18, 0.9);
+      --border-light: #ffe566;
+      --border-dark: #3a3000;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Courier New", "Trebuchet MS", Monaco, monospace;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      background-image: 
+        radial-gradient(circle at 50% 30%, rgba(255, 215, 0, 0.12), transparent 70%),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.85) 50%, rgba(255, 215, 0, 0.03) 50%);
+      background-size: 100% 100%, 100% 4px; /* CRT Scanline effect */
+      background-attachment: fixed;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Light Theme - OVO Platinum & Gold */
+    body.light {
+      --bg-color: #e5e5e8;
+      --text-color: #121215;
+      --panel-bg: rgba(255, 255, 255, 0.92);
+      --accent-gold: #b8860b;
+      --accent-cyan: #008b8b;
+      --accent-purple: #4b0082;
+      background-image: 
+        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(184, 134, 11, 0.08) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    /* Ticker / Marquee Banner */
+    .y2k-ticker {
+      background: var(--accent-gold);
+      color: #000;
+      font-weight: bold;
+      font-size: 0.85rem;
+      padding: 4px 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 2px ridge var(--accent-cyan);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    /* Retro Header */
+    header {
+      text-align: center;
+      padding: 25px 10px;
+      background: linear-gradient(180deg, rgba(255,215,0,0.15) 0%, rgba(10,10,12,0.8) 100%);
+      border-bottom: 3px outset var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: var(--accent-gold);
+      text-shadow: 3px 3px 0px #000, -1px -1px 0px var(--accent-cyan);
+      font-weight: 900;
+    }
+
+    header .subtitle {
+      font-size: 0.85rem;
+      color: var(--accent-cyan);
+      margin-top: 5px;
+    }
+
+    /* Y2K Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: rgba(0, 0, 0, 0.85);
+      border-bottom: 2px solid var(--accent-gold);
+      padding: 6px;
+      gap: 6px;
+    }
+
+    nav button {
+      background: linear-gradient(180deg, #2a2200 0%, #100d00 100%);
+      border: 2px outset var(--border-light);
+      color: var(--accent-gold);
+      padding: 8px 16px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: bold;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      box-shadow: 2px 2px 0px #000;
+      transition: all 0.1s ease;
+    }
+
+    nav button.active,
+    nav button:hover {
+      background: var(--accent-gold);
+      color: #000;
+      border-style: inset;
+      box-shadow: none;
+      text-shadow: none;
+    }
+
+    nav button.theme-toggle {
+      background: linear-gradient(180deg, var(--accent-cyan) 0%, #005f73 100%);
+      color: #fff;
+      border-color: #fff;
+      margin-left: auto;
+    }
+
+    /* Main Content Frame */
+    #content {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 25px;
+      background: var(--panel-bg);
+      border: 3px groove var(--accent-gold);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.25), inset 0 0 15px rgba(0, 240, 255, 0.1);
+      backdrop-filter: blur(5px);
+    }
+
+    h2 {
+      color: var(--accent-gold);
+      border-bottom: 2px dashed var(--accent-cyan);
+      padding-bottom: 5px;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      text-shadow: 2px 2px 0px #000;
+    }
+
+    h3 {
+      color: var(--accent-cyan);
+      margin-top: 25px;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+    }
+
+    a {
+      color: var(--accent-gold);
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    a:hover {
+      background-color: var(--accent-gold);
+      color: #000;
+      text-decoration: none;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #fff;
+      background: rgba(255, 215, 0, 0.1);
+      border-left: 5px solid var(--accent-gold);
+      border-right: 1px solid var(--accent-cyan);
+      padding: 10px 15px;
+      margin: 15px 0;
+      box-shadow: 3px 3px 0px rgba(0,0,0,0.5);
+    }
+
+    /* Responsive Embedded Video Container */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      margin-top: 15px;
+      margin-bottom: 25px;
+      border: 2px ridge var(--accent-gold);
+      background: #000;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      padding: 6px 0;
+      border-bottom: 1px dotted rgba(255,255,255,0.2);
+    }
+
+    ul li::before {
+      content: "🦉 ";
+      color: var(--accent-gold);
+    }
+
+    /* Cyber Badge List */
+    .badge-container {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .y2k-badge {
+      border: 1px solid var(--accent-gold);
+      background: #000;
+      color: var(--accent-gold);
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      font-weight: bold;
+    }
+
+    /* Footer Styles */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.95);
+      color: #888;
+      font-size: 0.8rem;
+      border-top: 2px solid var(--accent-gold);
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: var(--accent-cyan);
+    }
+  </style>
+</head>
+<body class="dark">
+
+  <div class="y2k-ticker">
+    <marquee scrollamount="6">★ WELCOME TO OVO SOUND CYBER HUB ★ DRAKE FANSTATION 2026 ★ MORE LIFE ★ EVERYTHING OVO ★</marquee>
+  </div>
+
+  <header>
+    <h1>🦉 DRAKE // 6GOD 🦉</h1>
+    <div class="subtitle">[ October's Very Own Digital Vault & Archive ]</div>
+  </header>
+
+  <nav>
+    <button class="tab active" onclick="loadTab('about')">📜 Biography</button>
+    <button class="tab" onclick="loadTab('music')">🎶 Lyrics</button>
+    <button class="tab" onclick="loadTab('spotify')">💿 Audio Stats</button>
+    <button class="tab" onclick="loadTab('media')">📺 Video Vault</button>
+    <button class="tab" onclick="loadTab('contact')">📡 Cyber Connect</button>
+    <button class="theme-toggle" onclick="toggleTheme()">⚙️ Theme Switch</button>
+  </nav>
+
+  <main id="content"></main>
+
+  <footer>
+    <div class="badge-container" style="justify-content: center; margin-bottom: 15px;">
+      <span class="y2k-badge">OVO SOUND CERTIFIED</span>
+      <span class="y2k-badge">6GOD APPROVED</span>
+      <span class="y2k-badge">MP3 AUDIO HQ</span>
+    </div>
+    © 2026 Fan Page • Made with 🦉 and 🎤<br>
+    Contents / Music courtesy of:
+    <a href="https://www.youtube.com/user/DrakeVEVO" target="_blank">Drake Official</a> |  
+    <a href="https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4" target="_blank">OVO Sound</a>
+  </footer>
+
+  <script>
+    const content = document.getElementById('content');
+
+    const tabs = {
+      about: `
+        <h2>📜 About Drake (Aubrey Drake Graham)</h2>
+        
+        <p><strong>Aubrey Drake Graham</strong> began his journey as an actor on the hit teen drama series <em>Degrassi: The Next Generation</em> before establishing himself as one of the most influential global music icons of the 21st century.</p>
+        <p>He broke into hip-hop with his classic 2009 mixtape <strong>“So Far Gone”</strong>, leading to his debut album <em>Thank Me Later</em> (2010). Over the next decade, seminal projects like <em>Take Care</em>, <em>Nothing Was the Same</em>, and <em>Views</em> cemented his place at the peak of the global music industry.</p>
+        <p>Drake’s sound combines introspective, melody-driven R&B with versatile rap flows. As the founder of the <strong>OVO Sound</strong> record label, his distinctive Toronto-influenced sound and signature owl logo have evolved into a worldwide cultural phenomenon.</p>
+        <p>He holds numerous world records, including the most Billboard Hot 100 entries by any artist in history, multiple Grammy Awards, and breaking all-time Spotify streaming milestones year after year.</p>
+      `,
+      music: `
+        <h2>🎶 Classic Lyrics Archive</h2>
+        <h3>01. One Dance (feat. Wizkid & Kyla)</h3>
+        <blockquote>"Baby, I like your style<br>Grips on your waist, front way, back way..."</blockquote>
+        <h3>02. God's Plan</h3>
+        <blockquote>"I might go down as a G.O.A.T.<br>I go down as G.O.A.T., yeah..."</blockquote>
+        <h3>03. Passionfruit</h3>
+        <blockquote>"Passiculate thoughts, passiculate minds<br>Hold on, let's hold on..."</blockquote>
+        <h3>04. Hotline Bling</h3>
+        <blockquote>"You used to call me on my cell phone<br>Late night when you need my love..."</blockquote>
+        <h3>05. Marvins Room</h3>
+        <blockquote>"I'm just sayin' you could do better<br>Tell me, have you heard that lately?..."</blockquote>
+      `,
+      spotify: `
+        <h2>💿 Spotify Cyber Overview</h2>
+        <p><strong>Monthly Listeners:</strong> ~95 Million</p>
+        <p><strong>Total Digital Streams:</strong> 80+ Billion</p>
+        <h3>TOP TRACKS:</h3>
+        <ul>
+          <li>One Dance — 4.4B+ Streams</li>
+          <li>God's Plan — 3.1B+ Streams</li>
+          <li>Passionfruit — 2.3B+ Streams</li>
+          <li>Work (Rihanna ft. Drake) — 1.7B+ Streams</li>
+          <li>Hotline Bling — 1.7B+ Streams</li>
+          <li>In My Feelings — 1.5B+ Streams</li>
+        </ul>
+        <iframe src="https://open.spotify.com/embed/artist/3TVXtAsR1Inumwj472S9r4" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      `,
+      media: `
+        <h2>📺 Video Vault</h2>
+        
+        <h3>Hotline Bling (Official Video)</h3>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/uxpDa-c-4Mc?si=JxbO5t9c0lBJ9EWM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <h3>God's Plan (Official Video)</h3>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/xpVfcZ0ZcFM?si=VsIAAg-OWP0drZsc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        
+        <h3>NOKIA (Official Video)</h3>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/8ekJMC8OtGU?si=Oflab5FvtCtbWFxf&amp;start=5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      `,
+      contact: `
+        <h2>📡 Cyber Connections</h2>
+        <ul>
+          <li><a href="https://instagram.com/champagnepapi" target="_blank">Instagram (@champagnepapi)</a></li>
+          <li><a href="https://www.youtube.com/user/DrakeVEVO" target="_blank">YouTube Channel</a></li>
+          <li><a href="https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4" target="_blank">Spotify Artist Page</a></li>
+          <li><a href="https://octobersveryown.com" target="_blank">Official OVO Store</a></li>
+        </ul>
+        <p style="margin-top:20px; font-style:italic;">This fan site is maintained by OVO fans, for OVO fans. 🦉</p>
+      `
+    };
+
+    function loadTab(tabName) {
+      content.innerHTML = tabs[tabName];
+      document.querySelectorAll('nav button.tab').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`nav button[onclick="loadTab('${tabName}')"]`).classList.add('active');
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      document.body.classList.toggle('light');
+    }
+
+    // Load default tab
+    loadTab('about');
+  </script>
+</body>
+</html>
